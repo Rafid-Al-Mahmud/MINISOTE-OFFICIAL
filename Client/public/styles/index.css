@@ -1,4 +1,98 @@
-*{box-sizing: border-box;margin: 0;padding: 0;font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;}
+/*
+# Initialize variables for whole stylesheet.
+*/
+/* __________^__________ */
+
+:root {
+    /* --bg: #00FEFF; */
+    --bg: gold;
+    --a: #7289da;
+    --b: #424549;
+    --c: #36393e;
+    --d: #282b30;
+    --e: #1e2124;
+}
+
+/* __________$__________ */
+
+
+
+/* 
+# FONT init
+# Initialize a the font called 'sansation' took from https://www.w3schools.com/Css/css3_fonts.asp.
+# Set the name of the font sansation as Rafoitiro.
+*/
+/* __________^__________ */
+
+@font-face {
+    font-family: Rafoitiro;
+    src: url(../fonts/sansation_light.woff);
+}
+
+@font-face {
+    font-family: Rafoitiro;
+    src: url(../fonts/sansation_bold.woff);
+    font-weight: bold;
+}
+
+/* __________$__________ */
+
+
+
+/*
+# Initialize default box sizing settings and fonts of all element of whole webpage.
+*/
+/* __________^__________ */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+    font-family: Rafoitiro;
+}
+
+/* __________$__________ */
+
+
+/*
+# Initialize scrollbar & selection settings for webkit based browsers.
+*/
+/* __________^__________ */
+
+::selection {
+    background-color: var(--bg);
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    /* background: var(--bg); */
+    background: grey;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    /* background: #009090; */
+    background: var(--bg);
+}
+
+/* __________$__________ */
+
+
+
 .product-logo-container {
     width: 200px;
     padding: 0 10px;
@@ -21,17 +115,26 @@
         flex-direction: column;
         justify-content: center;
     }
+/* 
+    .tablist {
+        flex-direction: column;
+        justify-content: center;
+    } */
 }
 
 .product-logo {
     width: 50px;
 }
-button{margin-top: 1000px;}
+
+button {
+    margin-top: 1000px;
+}
 
 nav {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
+    background-color: white;
     -webkit-box-shadow: 20px 20px 80px 10px #00000010;
     -moz-box-shadow: 20px 20px 80px 10px #00000010;
     box-shadow: 20px 20px 80px 10px #00000010;
@@ -49,6 +152,15 @@ nav {
     padding: 0px;
 }
 
+@media only screen and (max-width: 400px) {
+    .tablist {
+        /* flex-direction: column; */
+        justify-content: center;
+        padding: 10px;
+        overflow-x: scroll;
+    }
+}
+
 .tablist>li {
     padding: 20px;
 }
@@ -60,7 +172,8 @@ nav {
 
 .tablist li a:hover {
     background-color: #D9EDF7;
-    color: #00A0C6;
+    /* color: #00A0C6; */
+    color: var(--bg);
     cursor: pointer;
 }
 
@@ -69,10 +182,13 @@ k:hover {
     cursor: url(../../lib/5453183.cur) 4 12, initial;
 }
 
+
+
 /*
 # COMPONENT: Context_Menu
 */
-/* START -------------------------------------------------- */
+/* __________^__________ */
+
 .context-menu {
     position: fixed;
     z-index: 10000;
@@ -88,7 +204,9 @@ k:hover {
     user-select: none;
     -ms-content-zooming: zoom;
     /* box-shadow: 20px 20px 80px 10px #00000022; */
-    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28) /*#00000022*/;
+    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28)
+        /*#00000022*/
+    ;
     border-radius: 5px;
 }
 
@@ -119,23 +237,14 @@ k:hover {
     margin: 2px 0px;
     border-color: #555;
 }
-/* END -------------------------------------------------- */
+
+/* __________$__________ */
+
+
 
 /*
 MINISOTE
 */
-:root{
-    --d:"fh"
-}
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-*::selection{
-    background-color: var(d);
-}
 
 .flex-c-center {
     display: flex;
@@ -150,7 +259,7 @@ MINISOTE
 }
 
 /* Extra small devices (phones, 0px and up) */
-@media only screen and (min-width: 0px) {
+@media only screen and (max-width: 600px) {
     * {
         font-size: 100%;
     }
@@ -159,28 +268,28 @@ MINISOTE
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
     * {
-        font-size: 100%;
+        /* font-size: 100%; */
     }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
     * {
-        font-size: 100%;
+        /* font-size: 100%; */
     }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
     * {
-        font-size: 100%;
+        /* font-size: 100%; */
     }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
     * {
-        font-size: 100%;
+        /* font-size: 100%; */
     }
 }
 
@@ -227,10 +336,44 @@ MINISOTE
 }
 
 .store-apps-card-container {
-    display: flex;
+    display: inline-flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: space-between;
+}
+
+.app {
+    overflow: auto;
+}
+
+/* The heart of the matter */
+
+.horizontal-scrollable>.row {
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.horizontal-scrollable>.row>.col-xs-4 {
+    display: inline-block;
+    /* float: none; */
+}
+
+/* Decorations */
+
+.col-xs-4 {
+    width: 100px;
+    color: white;
+    font-size: 24px;
+    padding-bottom: 20px;
+    padding-top: 18px;
+}
+
+.col-xs-4:nth-child(2n+1) {
+    background: green;
+}
+
+.col-xs-4:nth-child(2n+2) {
+    background: black;
 }
 
 .store-apps-card {
@@ -245,7 +388,7 @@ MINISOTE
     border: 1px solid #5551;
     border-radius: 10px;
     cursor: pointer;
-    transition: all 0.3;
+    transition: all 3s;
     /* box-shadow: 0 1px 1px 0 rgba(32, 33, 36, .28); */
 }
 
@@ -283,7 +426,88 @@ MINISOTE
         height: 10vh;
         flex-direction: row;
     }
-    .store-apps-card.app_logo{
 
+    .store-apps-card.app_logo {}
+}
+
+
+
+
+
+/*
+    # animation: name duration timing-function delay iteration-count direction fill-mode play-state;
+    1. animation-name: keyframename|none|initial|inherit;
+    2. animation-duration (Kotokhon dhore hobe): time|initial|inherit;
+    2. animation-timing-easing-function (animation ta Kemon hobe): linear|ease|ease-in|ease-out|ease-in-out|step-start|step-end|steps(int,start|end)|cubic-bezier(n,n,n,n)|initial|inherit;
+    4. animation-delay (Kotokhon pore hobe): time|initial|inherit;
+    5. animation-iteration-count (koybar hobe): number|infinite|initial|inherit;
+    6. animation-direction: normal|reverse|alternate|alternate-reverse|initial|inherit;revert|revert-layer|unset;
+    7. animation-fill-mode: none|forwards|backwards|both|initial|inherit;revert,revert-layer|unset;
+    8. animation-play-state: paused|running|initial|inherit;revert,revert-layer,unset;
+*/
+
+@keyframes slidein {
+    from {
+        opacity: 1;
     }
+
+    to {
+        opacity: 0;
+    }
+}
+
+section {
+    padding: 16px 0;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media only screen and (max-width: 400px) {
+    .column{
+        flex-direction: row;
+        justify-content: center;
+    }
+    .row{
+        flex-direction: column;
+        justify-content: center;
+    }
+}    
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+img {
+    width: 50px;
+    user-select: none;
+}
+
+.sticky+section {
+    padding-top: 60px;
+}
+
+section.one {
+    padding: 200px 50px;
+    /* color: white; */
+    background: #1f4037;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(#1f4037, #99f2c8);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(#1f4037, #99f2c8);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: conic-gradient(from 45deg, black, lavender 50%, white 85%, white);
 }

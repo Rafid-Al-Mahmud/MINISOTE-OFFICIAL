@@ -1,3 +1,20 @@
+for (let i = 0; i < document.querySelectorAll('img').length; i++) {
+    document.querySelectorAll('img')[i].draggable='false';
+}
+
+window.onscroll = function() {myFunction()};
+
+var navbar = document.querySelector(".top-nav");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+
 // import fadeOutByRafid from '../../lib/fadeout.js';
 var contextElement = document.getElementsByClassName("context-menu")[0];
 window.addEventListener("contextmenu", function (event) {
