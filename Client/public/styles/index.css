@@ -500,7 +500,9 @@ img {
     padding-top: 60px;
 }
 
-section.one {
+section{
+    margin: 20px 0;
+    border-bottom: 2px solid black;
     padding: 200px 50px;
     /* color: white; */
     background: #1f4037;
@@ -509,5 +511,18 @@ section.one {
     /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(#1f4037, #99f2c8);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+section:nth-child(1) {
     background: conic-gradient(from 45deg, black, lavender 50%, white 85%, white);
+}
+
+section:nth-child(2) {
+    background: conic-gradient(from 90deg, black, lavender 50%, white 85%, white);
+}
+
+section:nth-child(3) {
+    /* background: conic-gradient(from 45deg, black, lavender 50%, white 85%, white); */
+    /* background: conic-gradient(from 45deg, lavender 50%, black, white 85%, white); */
+    background: conic-gradient(from -90deg, black, lavender 50%, white 85%, white);
 }

@@ -39,26 +39,26 @@
 <body>
     <div class="context-menu">
         <div class="item">
-            <div class="fa fa" onclick="document.execCommand('cut')">Cut</div>
+            <div class="fa fa-copy" onclick="document.execCommand('copy')">&nbsp;&nbsp;Copy</div>
         </div>
         <div class="item">
-            <div class="fa fa-copy" onclick="document.execCommand('copy')">Copy</div>
+            <div class="fa fa-paste" onclick="document.execCommand('paste')">&nbsp;&nbsp;Paste</div>
         </div>
         <div class="item">
-            <div class="fa fa-" onclick="document.execCommand('paste')">Paste</div>
+            <div class="fa fa-cut" onclick="document.execCommand('cut')">&nbsp;&nbsp;Cut</div>
         </div>
         <div class="item">
-            <div class="fa fa-" onclick="location.reload()">Reload</div>
+            <div class="fa fa-undo" onclick="location.reload()">&nbsp;&nbsp;Reload</div>
         </div>
         <hr>
         <div class="item">
-            <div class="fa fa-" onclick="history.back()" ondblclick="history.go(-2)">Back</div>
+            <div class="fa fa-backward" onclick="history.back()" ondblclick="history.go(-2)">&nbsp;&nbsp;Back</div>
         </div>
         <div class="item">
-            <div class="fa fa-" onclick="history.forward()" ondblclick="history.go(2)">Forward</div>
+            <div class="fa fa-forward" onclick="history.forward()" ondblclick="history.go(2)">&nbsp;&nbsp;Forward</div>
         </div>
         <div class="item">
-            <div class="fa fa-" onclick="print()">Print</div>
+            <div class="fa fa-print" onclick="print()">&nbsp;&nbsp;Print</div>
         </div>
     </div>
     <header>
@@ -67,10 +67,10 @@
                 <img class="product-logo" src="" draggable="false" alt="">
                 <style>
                     *{
-                        transition: all 1s;
+                        transition: all 0.5;
                     }
                     body {
-                        color: gold;
+                        /* color: gold; */
                         font-size: 20px;
                         height: 100vh;
                         font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -112,7 +112,7 @@
                         }
                     }
                 </style>
-                <h2 style="color: gold;">MINISOTE</h2>
+                <h2 style="color: gold;user-select: none;">MINISOTE</h2>
             </div>
             <ul class="tablist">
                 <li><a href="">HOME</a></li>
