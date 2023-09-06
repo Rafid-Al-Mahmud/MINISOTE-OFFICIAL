@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rantior</title>
+    <!-- w3s https://www.w3schools.com/tags/tag_meta.asp -->
+    <meta name="description" content="Free Web tutorials">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Rafid">
+    <meta property="og:title" content="rantior" />
+    <meta property="og:locale" content="en_US" />
+    <link rel="canonical" href="https://rafid-al-mahmud.github.io/rantior/" />
+    <meta property="og:url" content="https://rafid-al-mahmud.github.io/rantior/" />
+    <meta property="og:site_name" content="rantior" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta property="twitter:title" content="rantior" />
+    <!-- <meta http-eqiv="refresh" content="0"> -->
+    <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","headline":"rantior","name":"rantior","url":"https://rafid-al-mahmud.github.io/rantior/"}</script>
+    <!-- <link rel="icon" rel="shortcut icon" type="image/vnd.microsoft.icon" type="image/x-icon" href="./rantior.jpeg"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+    <link rel="stylesheet" type="text/css" href="../styles/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+    <style>
+        :root {
+            --a: #7289da;
+            --b: #424549;
+            --c: #36393e;
+            --d: #282b30;
+            --e: #1e2124;
+        }
+
+        /*
+            # animation: name duration timing-function delay iteration-count direction fill-mode play-state;
+            1. animation-name: keyframename|none|initial|inherit;
+            2. animation-duration (Kotokhon dhore hobe): time|initial|inherit;
+            2. animation-timing-easing-function (animation ta Kemon hobe): linear|ease|ease-in|ease-out|ease-in-out|step-start|step-end|steps(int,start|end)|cubic-bezier(n,n,n,n)|initial|inherit;
+            4. animation-delay (Kotokhon pore hobe): time|initial|inherit;
+            5. animation-iteration-count (koybar hobe): number|infinite|initial|inherit;
+            6. animation-direction: normal|reverse|alternate|alternate-reverse|initial|inherit;revert|revert-layer|unset;
+            7. animation-fill-mode: none|forwards|backwards|both|initial|inherit;revert,revert-layer|unset;
+            8. animation-play-state: paused|running|initial|inherit;revert,revert-layer,unset;
+        */
+        
+        @keyframes slidein {
+            from {opacity: 1;}
+            to {opacity: 0;}
+        }
+    </style>
+    <link rel="stylesheet" type="text/css"
+        href="https://raw.githubusercontent.com/lopiacode/audio-visualizer/main/style.css">
+</head>
+
+<body>
+    <div class="context-menu">
+        <div class="item">
+            <div class="fa fa" onclick="document.execCommand('cut')">Cut</div>
+        </div>
+        <div class="item">
+            <div class="fa fa-copy" onclick="document.execCommand('copy')">Copy</div>
+        </div>
+        <div class="item">
+            <div class="fa fa-" onclick="document.execCommand('paste')">Paste</div>
+        </div>
+        <div class="item">
+            <div class="fa fa-" onclick="location.reload()">Reload</div>
+        </div>
+        <hr>
+        <div class="item">
+            <div class="fa fa-" onclick="history.back()" ondblclick="history.go(-2)">Back</div>
+        </div>
+        <div class="item">
+            <div class="fa fa-" onclick="history.forward()" ondblclick="history.go(2)">Forward</div>
+        </div>
+        <div class="item">
+            <div class="fa fa-" onclick="print()">Print</div>
+        </div>
+    </div>
+    <header>
+        <nav class="top-nav">
+            <div class="product-logo-container flex-c-center">
+                <img class="product-logo" src="../images/logo/Project 8 (3).png" draggable="false" alt="">
+                <h1>buildAwesome</h1>
+            </div>
+            <ul class="tablist">
+                <li><a href="">HOME</a></li>
+                <li><a href="">ALL APPS</a></li>
+            </ul>
+        </nav>
+    </header>   
+    <main>
+        <div>
+            <h2>Rantior</h2>
+        </div>
+        <div class="app">
+            <div class="store-apps-card-container">
+                <div class="store-apps-card">
+                    <div class="app_logo">
+                        <img src="../images/logo/ba-calculator-2-auto.png" alt="&nbsp;Calculator">
+                    </div>
+                    <div class="app_name">Calculator</div>
+                </div>
+                <div class="store-apps-card">
+                    <div class="app_logo">
+                        <img src="../images/logo/ba-calender-auto.png" alt="&nbsp;Calculator">
+                    </div>
+                    <div class="app_name">Calender</div>
+                </div>
+                <div class="store-apps-card">
+                    <div class="app_logo">
+                        <img src="../images/logo/ba-clock-auto.png" alt="&nbsp;Calculator">
+                    </div>
+                    <div class="app_name">Clock</div>
+                </div>
+                <div class="store-apps-card">
+                    <div class="app_logo">
+                        <img src="../images/logo/ba-app-auto.svg" alt="&nbsp;Calculator">
+                    </div>
+                    <div class="app_name">Assistant</div>
+                </div>
+                <div class="store-apps-card">
+                    <div class="app_logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Circle-icons-tools.svg"
+                            alt="&nbsp;Calculator">
+                    </div>
+                    <div class="app_name">Tools</div>
+                </div>
+                <div class="store-apps-card">
+                    <div class="app_logo">
+                        <img src="../images/logo/ba-app-auto.svg" alt="&nbsp;Calculator">
+                    </div>
+                    <div class="app_name">Sites</div>
+                </div>
+                <div class="store-apps-card">
+                    <div class="app_logo">
+                        <img src="../images/logo/ba-chat_app-auto.svg" alt="&nbsp;Calculator">
+                    </div>
+                    <div class="app_name">Chat</div>
+                </div>
+                <div class="store-apps-card">
+                    <div class="app_logo">
+                        <img src="../images/logo/ba-app-auto.svg" alt="&nbsp;Calculator">
+                    </div>
+                    <div class="app_name">Blogs</div>
+                </div>
+                <div class="store-apps-card">
+                    <div class="app_logo">
+                        <img src="../images/logo/ba-app-auto.svg" alt="&nbsp;Calculator">
+                    </div>
+                    <div class="app_name">Madia</div>
+                </div>
+                <div class="store-apps-card">
+                    <div class="app_logo">
+                        <img src="../images/logo/ba-weather-auto.svg" alt="&nbsp;Calculator">
+                    </div>
+                    <div class="app_name">Weather</div>
+                </div>
+                <div class="store-apps-card">
+                    <div class="app_logo">
+                        <img src="../images/logo/ba-app-auto.svg" alt="&nbsp;Calculator">
+                    </div>
+                    <div class="app_name">Notes</div>
+                </div>
+                <div class="store-apps-card">
+                    <div class="app_logo">
+                        <img src="../images/logo/ba-app-auto.svg" alt="&nbsp;Calculator">
+                    </div>
+                    <div class="app_name">Music</div>
+                </div>
+                <div class="store-apps-card">
+                    <div class="app_logo">
+                        <img src="../images/logo/ba-app-auto.svg" alt="&nbsp;Calculator">
+                    </div>
+                    <div class="app_name">Photos</div>
+                </div>
+                <div class="store-apps-card">
+                    <div class="app_logo">
+                        <img src="../images/logo/ba-app-auto.svg" alt="&nbsp;Calculator">
+                    </div>
+                    <div class="app_name">Translate</div>
+                </div>
+                <div class="store-apps-card">
+                    <div class="app_logo">
+                        <!-- <img src="https://www.logo.wine/a/logo/Google_Storage/Google_Storage-Logo.wine.svg" alt="&nbsp;Calculator"> -->
+                        <img src="https://download.logo.wine/logo/Google_Storage/Google_Storage-Logo.wine.png"
+                            alt="&nbsp;Calculator">
+                    </div>
+                    <div class="app_name">Drive</div>
+                </div>
+                <div class="store-apps-card">
+                    <div class="app_logo">
+                        <img src="../images/logo/ba-app-auto.svg" alt="&nbsp;Calculator">
+                    </div>
+                    <div class="app_name">Web Builder</div>
+                </div>
+                <div class="store-apps-card">
+                    <div class="app_logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Colorwheel.svg"
+                            alt="&nbsp;Calculator">
+                    </div>
+                    <div class="app_name">Colours</div>
+                </div>
+                <div class="store-apps-card">
+                    <div class="app_logo">
+                        <img src="../images/logo/ba-app-auto.svg" alt="&nbsp;Calculator">
+                    </div>
+                    <div class="app_name">Search</div>
+                </div>
+                <div class="store-apps-card">
+                    <div class="app_logo">
+                        <img src="../images/logo/ba-app-auto.svg" alt="&nbsp;Calculator">
+                    </div>
+                    <div class="app_name">Workspace</div>
+                </div>
+                <div class="store-apps-card">
+                    <div class="app_logo">
+                        <img src="../images/logo/ba-app-auto.svg" alt="&nbsp;Calculator">
+                    </div>
+                    <div class="app_name">Recorder</div>
+                </div>
+                <div class="store-apps-card">
+                    <div class="app_logo">
+                        <img src="../images/logo/ba-app-auto.svg" alt="&nbsp;Calculator">
+                    </div>
+                    <div class="app_name">Videos</div>
+                </div>
+                <div class="store-apps-card">
+                    <div class="app_logo">
+                        <img src="../images/logo/ba-app-auto.svg" alt="&nbsp;Calculator">
+                    </div>
+                    <div class="app_name">Codes</div>
+                </div>
+                <div class="store-apps-card">
+                    <div class="app_logo">
+                        <img src="../images/logo/ba-app-auto.svg" alt="&nbsp;Calculator">
+                    </div>
+                    <div class="app_name">Fonts</div>
+                </div>
+                <div class="store-apps-card">
+                    <div class="app_logo">
+                        <img src="../images/logo/ba-app-auto.svg" alt="&nbsp;Calculator">
+                    </div>
+                    <div class="app_name">Meets</div>
+                </div>
+                <div class="store-apps-card">
+                    <div class="app_logo">
+                        <img src="../images/logo/ba-app-auto.svg" alt="&nbsp;Calculator">
+                    </div>
+                    <div class="app_name">Bmail</div>
+                </div>
+                <div class="store-apps-card">
+                    <div class="app_logo">
+                        <img src="../images/logo/ba-app-auto.svg" alt="&nbsp;Calculator">
+                    </div>
+                    <div class="app_name">Camera</div>
+                </div>
+                <div class="store-apps-card">
+                    <div class="app_logo">
+                        <img src="../images/logo/ba-app-auto.svg" alt="&nbsp;Calculator">
+                    </div>
+                    <div class="app_name">School Books BD</div>
+                </div>
+                <div class="store-apps-card">
+                    <div class="app_logo">
+                        <img src="../images/logo/ba-app-auto.svg" alt="&nbsp;Calculator">
+                    </div>
+                    <div class="app_name">Maps</div>
+                </div>
+                <div class="store-apps-card">
+                    <div class="app_logo">
+                        <img src="../images/logo/ba-app-auto.svg" alt="&nbsp;Calculator">
+                    </div>
+                    <div class="app_name">Joycord</div>
+                </div>
+                <div class="store-apps-card">
+                    <div class="app_logo">
+                        <img src="" alt="&nbsp;Calculator">
+                    </div>
+                    <div class="app_name">[...]</div>
+                </div>
+            </div>
+        </div>
+        <!-- <iframe src="calculator.html" frameborder="0" style="height: 80vh;width: 100%;"></iframe> -->
+    </main>
+    <button type="button" onclick="send()">send</button>
+    <div id="demo"></div>
+    <footer></footer>
+    <!-- 
+    havetocompose\l\MINISOTE\buildAwesome\apps\calculator\calculator.html
+    body-
+    <div id="menu" class="m-3">
+        <div class="menu-icon" onclick="this.classList.toggle('menu-icon-change')">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+        <div class="menu-body">
+            <div class="settings">Settings</div>
+            <div class="customize">Customize</div>
+            <div class="history">History</div>
+        </div>
+    </div>
+  -->
+    <!-- 
+havetocompose\l\MINISOTE\buildAwesome\apps\colours\colours.html
+body-
+<div class="container">
+    <table>
+        <thead>
+            <tr>
+                <th>Color Name</th>
+                <td>Hex</td>
+                <td>RGB</td>
+                <td>CMYK</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>AliceBlue</th>
+                <td>F0F8FF</td>
+                <td>240,248,255</td>
+                <td></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>AntiqueWhite</th>
+                <td>FAEBD7</td>
+                <td>250,235,215</td>
+                <td></td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+ -->
+
+    <!-- <div class='l'
+        style="display: flex;justify-content: center;flex-wrap: wrap;flex-direction: row;align-items: center; position: fixed;top:0;left:0;width:100vw;height:100vh;font-size:10vh;font-family: cursive;background: linear-gradient(115.3deg, rgb(67, 202, 177) 7.4%, rgb(255, 255, 255) 103.1%);">
+        <span style="background: linear-gradient(to right, rgb(182, 244, 146), rgb(51, 139, 147));-webkit-background-clip: text;-webkit-text-fill-color: transparent;
+            -webkit-text-stroke: 2px black; /* width and color */">PLEASE CLICK</span>
+    </div> -->
+
+    <!-- audio starts -->
+
+    <!-- audio ends -->
+
+
+    <audio src="https://www.bensound.com/bensound-music/bensound-memories.mp3"></audio>
+    <!-- <script type="text/javascript;version=1.8"> </script>-->
+    <script type="module" src="../scripts/index.js"></script>
+    <script type="text/javascript" src="../../lib/fadeout.js"></script>
+    <!-- <script src="/client/lib/ajax.js"></script> -->
+    <!-- <script src="/client/script.js"></script> -->
+    <!-- <script src="../appLoader.js"></script> -->
+</body>
+
+</html>

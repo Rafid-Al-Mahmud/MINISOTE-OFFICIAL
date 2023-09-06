@@ -1,0 +1,12 @@
+{
+    "workbench.colorTheme": "Default Dark+",
+    "workbench.iconTheme": "vscode-icons",
+    "files.autoSave": "afterDelay",
+    "window.zoomLevel": -1,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.unicodeHighlight.nonBasicASCII": false,
+    "git.autofetch": true,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "explorer.autoReveal": false,
+    // "editor.fontFamily":"system-ui"
+}

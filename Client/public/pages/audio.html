@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="audio.css">
+    <title>Visualizer</title>
+</head>
+
+<body>
+    <audio src="forever.mp3"></audio>
+    <div class="box">
+        <div class="visualizer"></div>
+    </div>
+    <div
+        style="position: fixed;bottom:0;left:20%;width: 50px;display: flex;justify-content: center;align-content: center;">
+        <style>
+            .slider {
+                -webkit-appearance: none;
+                appearance: none;
+                /* width: 100%; */
+                height: 10px;
+                border-radius: 5px;
+                background: #d3d3d3;
+                outline: none;
+                opacity: 1;
+                -webkit-transition: .2s;
+                transition: opacity .2s;
+            }
+
+            .slider:hover {
+                opacity: 1;
+            }
+
+            .slider::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                appearance: none;
+                width: 23px;
+                height: 24px;
+                border: 0;
+                background: url('playbtn.png');
+                cursor: pointer;
+            }
+
+            .slider::-moz-range-thumb {
+                width: 23px;
+                height: 24px;
+                border: 0;
+                /* background: url('playbtn.png'); */
+                background-image: url('playbtn.png');
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-position: center;
+                background-size: 100% ;
+                cursor: pointer;
+            }
+        </style>
+        <input type="range" min="0" mix="100" id="audio-range-bar" class="slider">
+        <div id="time"
+            style="height: 50px;width: 50px;color: white;font-family: cursive;font-weight: bolder;transition: font-size .5s;">
+        </div>
+    </div>
+    <div class="play">
+        <div class="btn btn-play"></div>
+    </div>
+    <div id="status" style="display: none;">false</div>
+    <script>
+        $ = (x = "*") => document.querySelectorAll(x);
+        const btn = document.querySelector('.btn');
+        const audio = document.querySelector('audio');
+        const visualizer = document.querySelector('.visualizer');
+
+        btn.addEventListener('click', e => {
+            audio.paused ? audio.play() : audio.pause();
+            btn.classList.toggle('btn-play');
+            btn.classList.toggle('btn-pause');
+        });
+
+        window.addEventListener('click', () => {
+            if (document.querySelector('#status').innerText === 'false') {
+                window.AudioContext = window.AudioContext || window.webkitAudioContext;
+                const ctx = new window.AudioContext();
+                const analyser = ctx.createAnalyser();
+                const source = ctx.createMediaElementSource(audio);
+                source.connect(analyser);
+                source.connect(ctx.destination);
+                analyser.fftSize = 64;
+                const bufferLength = analyser.frequencyBinCount;
+
+                let dataArray = new Uint8Array(bufferLength);
+                let elements = [];
+                for (let i = 0; i < bufferLength; i++) {
+                    const element = document.createElement('span');
+                    element.classList.add('element');
+                    elements.push(element);
+                    visualizer.appendChild(element);
+                }
+
+                const clamp = (num, min, max) => {
+                    if (num >= max) return max;
+                    if (num <= min) return min;
+                    return num;
+                }
+
+                const update = () => {
+                    requestAnimationFrame(update);
+                    analyser.getByteFrequencyData(dataArray);
+                    for (let i = 0; i < bufferLength; i++) {
+                        let item = dataArray[i];
+                        item = item > 150 ? item / 1.5 : item * 1.5;
+                        elements[i].style.transform = `rotateZ(${i * (360 / bufferLength)}deg) translate(-50%, ${clamp(item, 100, 150)}px)`;
+                    }
+                };
+                update();
+            }
+            document.querySelector('#status').innerText = 'true';
+        });
+        document.addEventListener('keypress', e => (e.key === ' ') ? btn.click() : false);
+        $('audio')[0].ontimeupdate = () => {
+            $('input')[0].value = ($('audio')[0].currentTime / $('audio')[0].duration) * 100;
+            const genRandom = (from = 0, to, int = true) => {
+                if (int === true) {
+                    const x = parseInt(Math.random() * (to + 1));
+                    return (x < from) ? genRandom(from, to, true) : x;
+                }
+                else if (int === false) {
+                    let x = Math.random() * (to + 1);
+                    x = (x > to) ? parseInt(x) : x;
+                    return (x < from) ? genRandom(from, to, false) : x;
+                }
+            };
+            $('#time')[0].style.fontSize = genRandom(30, 40) + 'px';
+            $('#time')[0].innerText = '~' + parseInt($('audio')[0].currentTime * 1000) + 'ms:' + parseInt($('audio')[0].duration * 1000) + 'ms~';
+        }
+        $('input')[0].addEventListener('click', () => { audio.currentTime = ($('input')[0].value / 100) * audio.duration })
+    </script>
+</body>
+
+</html>
